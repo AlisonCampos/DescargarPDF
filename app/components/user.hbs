@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center">
+  <form {{on "submit" this.saveUser}} class="needs-validation col-6" novalidate>
+    <h2 class="text-center mb-4">Registra a alguien!!</h2>
+    <div class="form-group">
+      <label for="username">Nombre de usuario:</label>
+      <Input id="username" @value={{this.username}} @type="text" class="form-control" required/>
+      <div class="invalid-feedback">
+        Por favor ingresa un nombre de usuario.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Contraseña:</label>
+      <Input id="password" @value={{this.password}} @type="password" class="form-control" required/>
+      <div class="invalid-feedback">
+        Por favor ingresa una contraseña.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="passwordConfirmation">Confirmar contraseña:</label>
+      <Input id="passwordConfirmation" @value={{this.passwordConfirmation}} @type="password" class="form-control" required/>
+      <div class="invalid-feedback">
+        Por favor confirma tu contraseña.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="userType">Tipo de usuario:</label>
+      <select id="userType" class="form-control" {{on "change" (on this.updateUserType)}}>
+
+        <option value="">Selecciona un tipo de usuario</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+      <div class="invalid-feedback">
+        Por favor selecciona un tipo de usuario.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="status">Estado:</label>
+      <select id="status" class="form-control" {{on "change" (on this.updateStatus)}}>
+
+        <option value="">Selecciona un estado</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      <div class="invalid-feedback">
+        Por favor selecciona un estado.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>
+</div>
+{{this.message}}

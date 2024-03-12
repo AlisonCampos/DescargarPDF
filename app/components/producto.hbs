@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <form class="needs-validation col-6" novalidate>
+    <h2 class="text-center mb-4">Agrega un producto nuevo !!</h2>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre del producto:</label>
+      <Input id="nombre" class="form-control" @value={{this.nombre}} @type="text" />
+    </div>
+
+    <div class="mb-3">
+      <label for="tipo" class="form-label">Tipo de producto:</label>
+      <select id="tipo" class="form-select" {{on "change" this.updateTipo}}>
+        <option value="">Selecciona un tipo de producto</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="subtipo" class="form-label">Subtipo:</label>
+      <select id="subtipo" class="form-select" {{on "change" this.updateSubtipo}}>
+        <option value="">Selecciona un subtipo</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción:</label>
+      <Input id="descripcion" class="form-control" @value={{this.descripcion}} @type="text" />
+    </div>
+
+    <div class="mb-3">
+      <label for="maximo" class="form-label">Máximo:</label>
+      <Input id="maximo" class="form-control" @value={{this.maximo}} @type="number" />
+    </div>
+
+    <div class="mb-3">
+      <label for="minimo" class="form-label">Mínimo:</label>
+      <Input id="minimo" class="form-control" @value={{this.minimo}} @type="number" />
+    </div>
+
+    <div class="mb-3">
+      <label for="stock" class="form-label">Stock:</label>
+      <Input id="stock" class="form-control" @value={{this.stock}} @type="number" />
+    </div>
+
+    <div class="mb-3">
+      <label for="precio" class="form-label">Precio:</label>
+      <Input id="precio" class="form-control" @value={{this.precio}} @type="number" />
+    </div>
+
+    <div class="mb-3">
+      <label for="costo" class="form-label">Costo:</label>
+      <Input id="costo" class="form-control" @value={{this.costo}} @type="number" />
+    </div>
+
+    <div class="mb-3">
+      <button type="button" class="btn btn-primary" {{on "click" this.insertar}}>Insertar en la BD</button>
+      <button type="button" class="btn btn-secondary" {{on "click" this.cancelar}}>Cancelar</button>
+    </div>
+  </form>
+</div>

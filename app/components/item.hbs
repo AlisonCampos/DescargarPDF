@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center">
+  <form class="needs-validation col-6" novalidate>
+    <h2 class="text-center mb-4">Productos !!</h2>
+    <div class="mb-3">
+      <button type="button" class="btn btn-primary" {{on "click" this.addItem}}>Agregar</button>
+    </div>
+
+    <div class="mb-3">
+      <label for="subcategoria" class="form-label">Subcategoría:</label>
+      <Input id="subcategoria" class="form-control" @value={{this.subcategoria}} @type="text" />
+    </div>
+
+    <div class="mb-3">
+      <label for="categoria" class="form-label">Categoría:</label>
+      <Input id="categoria" class="form-control" @value={{this.categoria}} @type="text" />
+    </div>
+
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre:</label>
+      <Input id="nombre" class="form-control" @value={{this.nombre}} @type="text" />
+    </div>
+
+    <div class="mb-3">
+      <button type="button" class="btn btn-primary" {{on "click" this.deleteItem}}>Eliminar</button>
+      <button type="button" class="btn btn-primary" {{on "click" this.editItem}}>Editar</button>
+    </div>
+  </form>
+</div>
