@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="form-group">
+    <label for="tipoUsuarioSeleccionado">Tipo de Usuario</label>
+    <select class="form-control" id="tipoUsuarioSeleccionado" onchange="updateTipoUsuarioSeleccionado(this.value)">
+      <option value="">Selecciona un tipo de usuario</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="estadoUsuarioSeleccionado">Estado de Usuario</label>
+    <select class="form-control" id="estadoUsuarioSeleccionado" onchange="updateEstadoUsuarioSeleccionado(this.value)">
+      <option value="">Selecciona un estado de usuario</option>
+    </select>
+  </div>
+
+  <ul class="list-group">
+    {{#each this.usuariosFiltrados as |usuario|}}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{usuario.nombre}}
+        <div>
+          <button type="button" class="btn btn-primary" onclick="editarUsuario(usuario)">Editar</button>
+          <button type="button" class="btn btn-danger" onclick="eliminarUsuario(usuario)">Eliminar</button>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+

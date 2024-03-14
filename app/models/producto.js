@@ -1,4 +1,4 @@
-// app/models/producto.js
+
 import DS from 'ember-data';
 const { Model, attr } = DS;
 
